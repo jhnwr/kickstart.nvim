@@ -114,9 +114,17 @@ require('lazy').setup({
 
   { -- Theme inspired by Atom
     'navarasu/onedark.nvim',
-    priority = 1000,
+    priority = 1001,
     config = function()
       vim.cmd.colorscheme 'onedark'
+    end,
+  },
+
+  { -- oxocarbon theme 
+    'nyoom-engineering/oxocarbon.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'oxocarbon'
     end,
   },
 
@@ -126,13 +134,19 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
     },
   },
-
+  {
+    's1n7ax/nvim-terminal',
+    config = function()
+        vim.o.hidden = true
+        require('nvim-terminal').setup()
+    end,
+  },
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
@@ -142,6 +156,7 @@ require('lazy').setup({
       show_trailing_blankline_indent = false,
     },
   },
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
