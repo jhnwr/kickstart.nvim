@@ -127,6 +127,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'oxocarbon'
     end,
   },
+  { "catppuccin/nvim", name = "catppuccin" },
 
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -505,6 +506,13 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- terminal transparency
+vim.cmd("highlight Normal guibg=None")
+-- line numbers fix for theme
+vim.cmd("highlight LineNr gui=NONE guibg=NONE")
+-- relaive line numbers
+vim.wo.relativenumber = true
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
