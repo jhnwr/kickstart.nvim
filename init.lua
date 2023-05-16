@@ -157,7 +157,12 @@ require('lazy').setup({
       show_trailing_blankline_indent = false,
     },
   },
+
+  -- toggleterm plugin
   {'akinsho/toggleterm.nvim', version = "*", config = true},
+
+  -- autopairs plugin
+  {"windwp/nvim-autopairs"},
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -513,6 +518,8 @@ vim.cmd("highlight Normal guibg=None")
 vim.cmd("highlight LineNr gui=NONE guibg=NONE")
 -- relaive line numbers
 vim.wo.relativenumber = true
+-- overiding sleuth for tabs here
+vim.cmd("set autoindent expandtab tabstop=4 shiftwidth=4")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
